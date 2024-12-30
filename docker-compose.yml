@@ -1,0 +1,42 @@
+services:
+    accessibility_scanner_backend:
+        build:
+            context: ./backend
+            dockerfile: Dockerfile
+        container_name: accessibility_scanner_backend
+        restart: unless-stopped
+        working_dir: /var/www
+        volumes:
+            - ./backend:/var/www
+            - ./backend/vendor:/var/www/vendor
+            - ./backend/storage:/var/www/storage
+        ports:
+            - "8081:8081"  # Laravel app runs on port 8000
+        env_file:
+            - backend/.env
+        networks:
+            - backend-network
+
+    accessibility_scanner_frontend:
+        build:
+            context: ./frontend
+            dockerfile: Dockerfile
+        container_name: accessibility_scanner_frontend
+        restart: unless-stopped
+        working_dir: /app
+        env_file:
+            - ./frontend/.env
+        ports:
+            - "8090:8090"
+        depends_on:
+            - accessibility_scanner_backend
+        networks:
+            - backend-network
+
+volumes:
+    vendor:
+    storage:
+
+networks:
+    backend-network:
+        driver: bridge

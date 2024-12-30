@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A fully accessible page demonstrating compliance with WCAG guidelines.">
+    <title>Accessible Page</title>
+</head>
+<body>
+<header>
+    <h1>Welcome to the Accessible Page</h1>
+    <nav>
+        <ul>
+            <li><a href="#about-us">About Us</a></li>
+            <li><a href="#preferences">Preferences</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <section id="about-us">
+        <h2>About Us</h2>
+        <p>This page is designed to be fully accessible and compliant with WCAG guidelines.</p>
+        <img src="accessible-image.jpg" alt="An example of an accessible webpage layout">
+    </section>
+    <section id="preferences">
+        <h2>Preferences</h2>
+        <form>
+            <label for="search">Search:</label>
+            <input type="search" id="search" name="search" class="form-control top-search" placeholder="Search here...">
+
+            <fieldset>
+                <legend>Notification Preferences</legend>
+                <label for="preference1">
+                    <input type="checkbox" id="preference1" name="preferences"> Receive notifications
+                </label>
+                <label for="preference2">
+                    <input type="checkbox" id="preference2" name="preferences"> Receive emails
+                </label>
+            </fieldset>
+
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>If you have any questions, feel free to <a href="mailto:info@example.com">email us</a>.</p>
+    </section>
+</main>
+<footer>
+    <p>&copy; 2024 Accessible Company</p>
+</footer>
+</body>
+</html>
